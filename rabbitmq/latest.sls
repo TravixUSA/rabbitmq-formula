@@ -2,16 +2,16 @@ include:
   - rabbitmq
   
 {% if grains['os_family'] == 'Debian' %}
-rabbitmq_repo:
+rabbitmq.repo:
   pkgrepo.managed:
     - humanname: RabbitMQ Repository
     - name: deb http://www.rabbitmq.com/debian/ testing main
     - file: /etc/apt/sources.list.d/rabbitmq.list
     - key_url: http://www.rabbitmq.com/rabbitmq-signing-key-public.asc
     - require_in:
-      - pkg: rabbitmq-server
+      - pkg: rabbitmq.install
 {% elif grains['os'] == 'CentOS' and grains['osmajorrelease'][0] == '6' %}
-rabbitmq_repo:
+rabbitmq.repo:
   pkgrepo.managed:
     - humanname: RabbitMQ Packagecloud Repository
     - baseurl: https://packagecloud.io/rabbitmq/rabbitmq-server/el/6/$basearch
@@ -21,5 +21,5 @@ rabbitmq_repo:
     - sslverify: 1
     - sslcacert: /etc/pki/tls/certs/ca-bundle.crt
     - require_in:
-      - pkg: rabbitmq-server
+      - pkg: rabbitmq.install
 {% endif %}

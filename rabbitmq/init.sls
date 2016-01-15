@@ -1,3 +1,7 @@
 include:
-  - rabbitmq.install
-  - rabbitmq.config
+  - .install
+  - .service
+  - .plugin
+  - .policy
+  - .user
+  - .vhost
