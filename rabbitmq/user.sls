@@ -1,3 +1,6 @@
+include:
+  - .vhost
+
 {% for name, user in salt["pillar.get"]("rabbitmq:user", {}).items() %}
 rabbitmq.user.{{ name }}:
   rabbitmq_user.present:
@@ -7,4 +10,5 @@ rabbitmq.user.{{ name }}:
     {% endfor %}
     - require:
       - service: rabbitmq.service
+      - sls: rabbit.vhost
 {% endfor %}
