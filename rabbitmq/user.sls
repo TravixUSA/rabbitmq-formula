@@ -10,5 +10,5 @@ rabbitmq.user.{{ name }}:
     {% endfor %}
     - require:
       - service: rabbitmq.service
-      - sls: rabbit.vhost
+      - sls: rabbitmq.vhost
 {% endfor %}
