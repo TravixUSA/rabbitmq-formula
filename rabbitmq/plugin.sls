@@ -1,13 +1,13 @@
 {% for name, plugin in salt["pillar.get"]("rabbitmq:plugin", {}).items() %}
-{{ name }}:
+rabbitmq.plugin.{{ name }}:
   rabbitmq_plugin:
+    - name: {{ name }}
     {% for value in plugin %}
     - {{ value }}
     {% endfor %}
     - runas: root
     - require:
-      - pkg: rabbitmq-server
-      - file: rabbitmq_binary_tool_plugins
+      - pkg: rabbitmq.install
     - watch_in:
-      - service: rabbitmq-server
+      - service: rabbitmq.service
 {% endfor %}
