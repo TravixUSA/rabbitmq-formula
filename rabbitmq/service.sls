@@ -3,6 +3,6 @@
 rabbitmq.service:
   service.running:
     - name: {{ map.service }}
-    - enabled: True
+    - enable: True
     - require:
       - pkg: rabbitmq.install
