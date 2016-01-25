@@ -2,13 +2,28 @@
     'Debian': {
         'package': 'rabbitmq-server',
         'service': 'rabbitmq-server',
+        'user': 'rabbitmq',
+        'group': 'rabbitmq',
+        'home_dir': '/var/lib/rabbitmq',
+        'erlang_user': 'rabbit',
+        'erlang_master': 'localhost'
     },
     'RedHat': {
         'package': 'rabbitmq-server',
         'service': 'rabbitmq-server',
+        'user': 'rabbitmq',
+        'group': 'rabbitmq',
+        'home_dir': '/var/lib/rabbitmq',
+        'erlang_user': 'rabbit',
+        'erlang_master': 'localhost'
     },
     'Gentoo': {
         'package': 'net-misc/rabbitmq-server',
         'service': 'rabbitmq-server',
+        'user': 'rabbitmq',
+        'group': 'rabbitmq',
+        'home_dir': '/var/lib/rabbitmq',
+        'erlang_user': 'rabbit',
+        'erlang_master': 'localhost'
     },
 }, merge=salt['pillar.get']('rabbitmq:lookup')) %}
