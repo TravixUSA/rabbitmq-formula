@@ -7,3 +7,4 @@ rabbitmq.erlang_cookie:
     - group: {{ map.group }}
     - mode: 600
     - contents_pillar: rabbitmq:erlang_cookie
+    - contents_newline: False
