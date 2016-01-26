@@ -11,3 +11,5 @@ rabbitmq.cluster.join:
     - require:
       - file: rabbitmq.erlang_cookie
       - service: rabbitmq.service
+    - watch_in:
+      - service: rabbitmq.service
