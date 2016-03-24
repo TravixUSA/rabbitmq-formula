@@ -3,7 +3,7 @@
 {% from slspath + "/map.jinja" import map with context %}
 rabbitmq.config:
   file.managed:
-    - name: {{ map.config_path }}
+    - name: {{ map.config_file }}
     - user: root
     - group: root
     - mode: 644
