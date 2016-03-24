@@ -7,7 +7,9 @@
         'home_dir': '/var/lib/rabbitmq',
         'erlang_user': 'rabbit',
         'erlang_master': 'localhost',
-        'config_file': '/etc/rabbitmq/rabbitmq.config'
+        'config_file': '/etc/rabbitmq/rabbitmq.config',
+        'pillar_ssl_cert': 'rabbitmq:cert',
+        'pillar_ssl_key': 'rabbitmq:key'
     },
     'RedHat': {
         'package': 'rabbitmq-server',
@@ -17,7 +19,9 @@
         'home_dir': '/var/lib/rabbitmq',
         'erlang_user': 'rabbit',
         'erlang_master': 'localhost',
-        'config_file': '/etc/rabbitmq/rabbitmq.config'
+        'config_file': '/etc/rabbitmq/rabbitmq.config',
+        'pillar_ssl_cert': 'rabbitmq:cert',
+        'pillar_ssl_key': 'rabbitmq:key'
     },
     'Gentoo': {
         'package': 'net-misc/rabbitmq-server',
@@ -27,6 +31,8 @@
         'home_dir': '/var/lib/rabbitmq',
         'erlang_user': 'rabbit',
         'erlang_master': 'localhost',
-        'config_file': '/etc/rabbitmq/rabbitmq.config'
+        'config_file': '/etc/rabbitmq/rabbitmq.config',
+        'pillar_ssl_cert': 'rabbitmq:cert',
+        'pillar_ssl_key': 'rabbitmq:key'
     },
 }, merge=salt['pillar.get']('rabbitmq:lookup')) %}
