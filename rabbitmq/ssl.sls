@@ -1,7 +1,7 @@
 {%- from slspath + "/map.jinja" import map with context %}
 rabbitmq.ssl.cert:
   file.managed:
-    - name: {{ map.home_dir }}
+    - name: {{ map.home_dir }}/cert.pem
     - user: root
     - group: root
     - mode: 644
@@ -9,7 +9,7 @@ rabbitmq.ssl.cert:
 
 rabbitmq.ssl.key:
   file.managed:
-    - name: {{ map.home_dir }}
+    - name: {{ map.home_dir }}/key.pem
     - user: root
     - group: root
     - mode: 644
