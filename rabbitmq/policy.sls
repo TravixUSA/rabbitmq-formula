@@ -1,5 +1,5 @@
 {% for name, policy in salt["pillar.get"]("rabbitmq:policy", {}).items() %}
-{{ name }}:
+rabbitmq.policy.{{ name }}:
   rabbitmq_policy.present:
     {% for value in policy %}
     - {{ value }}
