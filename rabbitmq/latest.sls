@@ -7,7 +7,7 @@ rabbitmq.repo:
     - humanname: RabbitMQ Repository
     - name: deb http://www.rabbitmq.com/debian/ testing main
     - file: /etc/apt/sources.list.d/rabbitmq.list
-    - key_url: http://www.rabbitmq.com/rabbitmq-signing-key-public.asc
+    - key_url: https://www.rabbitmq.com/rabbitmq-release-signing-key.asc
     - require_in:
       - pkg: rabbitmq.install
 {% elif grains['os'] == 'CentOS' and grains['osmajorrelease'][0] == '6' %}
